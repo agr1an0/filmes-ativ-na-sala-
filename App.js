@@ -1,5 +1,5 @@
 
-import { StyleSheet, Text, View,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View,TouchableOpacity, Image } from 'react-native';
 import Feather from '@expo/vector-icons/Feather';
 import { TextInput } from 'react-native-web';
 export default function App() {
@@ -20,10 +20,21 @@ export default function App() {
       <view style={styles.containerSearch}> 
       <TextInput 
       placeholder = 'Digite o filme que deseja buscar'
+      style={styles.inputSearch}
       ></TextInput>
-
+      
+      <TouchableOpacity>
+      <Feather name="search" size={24} color="black" />
+      </TouchableOpacity>
+      
       </view>
+       {/* inicio Banner (não teria outra view?)*/}
+
+      <text style={styles.textBanner}> Em Cartaz </text>
+      <Image source={require("./assets/cartaz1.jpg")}
+      style={styles.imageBanner} />
     </View>
+
   );
 }
 
@@ -49,6 +60,28 @@ const styles = StyleSheet.create({
   containerSearch: {
     marginTop: 20,
     width: '90%',
-    backgroundColor: "white"
+    backgroundColor: "white",
+    borderRadius: 5,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
   },
+  inputSearch: {
+    height: 40,
+    padding: 5,
+    width: '100%'
+  },
+  imageBanner: {
+    width: '100%',
+    height:200,
+    marginTop:15,
+    borderRadius: 10
+  },
+  textBanner: {
+    color: 'white',
+    width: '90%',
+    fontSize: 30,
+    marginTop: 20,
+    fontWeight: 'bold'
+  }
 });
