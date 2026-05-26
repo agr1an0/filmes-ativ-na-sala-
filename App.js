@@ -31,7 +31,7 @@ export default function App() {
        {/* inicio Banner (não teria outra view?)*/}
 
       <text style={styles.textBanner}> Em Cartaz </text>
-      <Image source={require("./assets/cartaz1.jpg")}
+      <Image source={require("./assets/adão.jpg")}
       style={styles.imageBanner} />
     </View>
 
@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
     width: '90%',
     backgroundColor: "white",
     borderRadius: 5,
+    padding: 8,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center'
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   imageBanner: {
-    width: '100%',
+    width: '90%',
     height:200,
     marginTop:15,
     borderRadius: 10
