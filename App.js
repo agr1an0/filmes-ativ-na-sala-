@@ -1,8 +1,10 @@
 import { StyleSheet, Text, View,TouchableOpacity, Image } from 'react-native';
 import Feather from '@expo/vector-icons/Feather';
-import { TextInput } from 'react-native-web';
+import { FlatList, TextInput } from 'react-native-web';
 import Header from './src/componentes/Header';
 import Search from './src/componentes/Search';
+import Banner from './src/componentes/Banner';
+import Filmes from './Data/Filmes';
 export default function App() {
   return (
     <View style={styles.container}>
@@ -10,6 +12,13 @@ export default function App() {
        <Header></Header>
       {/* INICIO PESQUISA */}
       <Search></Search>
+    
+      {/* <Banner></Banner> */}
+       {/* <View>
+      <text style={styles.textBanner}> Em Cartaz </text>
+      <Image source={require("./assets/adão.jpg")}
+      style={styles.imageBanner}/>
+    </View> */}
       {/* <view style={styles.containerSearch}> 
       <TextInput 
       placeholder = 'Digite o filme que deseja buscar'
@@ -23,12 +32,25 @@ export default function App() {
       </view>
        */}
        {/* inicio Banner (não teria outra view?)*/}
-
+       {/* <View>
       <text style={styles.textBanner}> Em Cartaz </text>
       <Image source={require("./assets/adão.jpg")}
       style={styles.imageBanner} />
-    </View>
-
+    </View>  */}
+      <View style = {{width: '90%'}}>
+        <FlatList
+        horizontal= {true}
+        data={Filmes}
+        keyExtractor={(item)=> item.id}
+        renderItem={(item)=> (
+          <TouchableOpacity>
+            <Image style = {{width:80, height: 100}} source={{uri:item.imagem}} />
+            <item> {item.nome} </item>
+          </TouchableOpacity>
+        )}
+        />
+      </View>
+  </View>
   );
 }
 
@@ -67,17 +89,17 @@ const styles = StyleSheet.create({
   //   padding: 5,
   //   width: '100%'
   // },
-  imageBanner: {
-    width: '90%',
-    height:200,
-    marginTop:15,
-    borderRadius: 10
-  },
-  textBanner: {
-    color: 'white',
-    width: '90%',
-    fontSize: 30,
-    marginTop: 20,
-    fontWeight: 'bold'
-  }
+  // imageBanner: {
+  //   width: '90%',
+  //   height:200,
+  //   marginTop:15,
+  //   borderRadius: 10
+  // },
+  // textBanner: {
+  //   color: 'white',
+  //   width: '90%',
+  //   fontSize: 30,
+  //   marginTop: 20,
+  //   fontWeight: 'bold'
+  // }
 });

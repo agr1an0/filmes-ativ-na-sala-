@@ -1,9 +1,9 @@
-const Data = [
+const Filmes = [
     {
      id:'01',
      nome: 'Adão negro',
      nota: '4.5',
-     imagem: 'dão.jpg'
+     imagem: 'adão.jpg'
     },
     {
      id:'02',
@@ -60,3 +60,5 @@ const Data = [
      imagem: ''
     },
 ]
+export default Filmes
+// substituir imagens por urls de img na movieDb

@@ -4,7 +4,7 @@ import styles from './style.js'
 import { TextInput } from 'react-native-web';
 export default function Search() {
     return (
-        <view style={styles.containerSearch}> 
+        <View style={styles.containerSearch}> 
       <TextInput 
       placeholder = 'Digite o filme que deseja buscar'
       style={styles.inputSearch}
@@ -13,7 +13,6 @@ export default function Search() {
       <TouchableOpacity>
       <Feather name="search" size={24} color="black" />
       </TouchableOpacity>
-      
-      </view>
+      </View>
     )
 }
